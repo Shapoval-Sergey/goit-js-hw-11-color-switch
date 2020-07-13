@@ -17,7 +17,6 @@ const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-let indexArr = null;
 let number = null;
 let changeNumber = null;
 
@@ -27,12 +26,7 @@ function onClickStart() {
   }
   changeNumber = setInterval(() => {
     number = randomIntegerFromInterval(0, colors.length - 1);
-    for (let i = 0; i < colors.length; i += 1) {
-      const element = colors[i];
-      indexArr = colors.indexOf(element);
-      indexArr = number;
-    }
-    refs.body.style.backgroundColor = colors[indexArr];
+    refs.body.style.backgroundColor = colors[number];
   }, 1000);
 }
 
