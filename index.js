@@ -28,11 +28,15 @@ function onClickStart() {
     number = randomIntegerFromInterval(0, colors.length - 1);
     refs.body.style.backgroundColor = colors[number];
   }, 1000);
+  refs.start.setAttribute('disabled', true);
+  refs.stop.removeAttribute('disabled');
 }
 
 function onClickStop() {
   clearInterval(changeNumber);
   changeNumber = null;
+  refs.stop.setAttribute('disabled', true);
+  refs.start.removeAttribute('disabled');
 }
 
 refs.start.addEventListener('click', onClickStart);
